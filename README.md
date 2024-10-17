@@ -29,7 +29,7 @@ The objective of this project was to build a Laravel application that adds a `ti
 ### Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/Developer-Shutdown.git
+git clone https://github.com/Chi-G/Developer-Shutdown.git
 cd Developer-Shutdown
 
 ### Step 2: Install dependencies
@@ -55,3 +55,23 @@ Use the following artisan command to update users with new random data:
 
 ```bash
 php artisan users:update
+
+
+
+## Project Phases and Time Tracking
+Below is a breakdown of each phase in the project along with the time it took to complete them:
+
+                      - Added a `timezone` field to `users` table.  
+                      - Seeded 20 users with random timezones.  
+                      - Created an artisan command to update user attributes.  
+                      - Prepared API logic for batch updates. | 60-90 minutes            |
+| 3. Staging and Testing | Tested the project to ensure all features (artisan commands, seeding, batch API) work as expected. | 30-45 minutes | | 4. Debugging | Resolved any issues discovered during testing and optimized the solution where necessary. | 20-30 minutes | | 5. Submit | Final code review, documentation, pushed the changes to the GitHub repository. | 10-15 minutes |
+
+## Conclusion
+This project was completed following the Laravel Developer Showdown requirements. Each phase was handled efficiently, ensuring that all features functioned as required. If you have any questions or feedback, feel free to reach out!
+
+## Author
+Chijindu Nwokeohuru
+Laravel Developer | chijindu.nowkeohuru@gmail.com
+
+
