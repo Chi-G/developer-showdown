@@ -77,6 +77,6 @@ This project was completed following the Laravel Developer Showdown requirements
 
 ### Author
 Chijindu Nwokeohuru | 
-Laravel Developer | chijindu.nowkeohuru@gmail.com
+Laravel Developer | chijindu.nwokeohuru@gmail.com
 
 
