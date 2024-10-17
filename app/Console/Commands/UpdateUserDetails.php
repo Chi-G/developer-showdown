@@ -23,7 +23,8 @@ class UpdateUserDetails extends Command
         $timezones = ['CET', 'CST', 'GMT+1'];
 
         foreach ($users as $user) {
-            $user->name = $faker->name();
+            $user->first_name = $faker->firstName();
+            $user->last_name = $faker->lastName();
             $user->timezone = $timezones[array_rand($timezones)];
             $user->save();
         }
