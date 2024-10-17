@@ -24,8 +24,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // Example scheduled task
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            app(BatchUpdateService::class)->updateUsersInBatches();
+        })->hourly(); //run the schedule per hour
     }
 
     /**
