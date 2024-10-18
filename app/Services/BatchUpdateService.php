@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class BatchUpdateService
 {
-    protected $apiEndpoint = 'https://third-party-api.com/endpoint';
+    protected $apiEndpoint = 'http://localhost:8000/api/users/batch-update';
 
     public function updateUsersInBatches()
     {
@@ -18,6 +18,8 @@ class BatchUpdateService
         foreach ($batches as $batch) {
             $subscribers = $batch->map(function ($user) {
                 return [
+                    'first_name' => $user->first_name,
+                    'last_name' => $user->last_name,
                     'email' => $user->email,
                     'time_zone' => $user->timezone,
                 ];
