@@ -38,7 +38,13 @@ class UserController extends Controller
             'timezone' => 'required',
         ]);
 
-        User::create($request->all());
+        User::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'timezone' => $request->timezone,
+        ]);
+
         return redirect()->route('users.index')->with('success', 'User created successfully.');
     }
 

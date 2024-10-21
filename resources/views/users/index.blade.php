@@ -1,8 +1,7 @@
-{{-- @extends('layouts.app') --}}
+@extends('layouts.app')
 
 @section('content')
     <h1>User List</h1>
-    <a href="{{ route('users.create') }}">Create New User</a>
 
     @if(session('success'))
         <div>{{ session('success') }}</div>

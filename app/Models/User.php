@@ -20,8 +20,17 @@ class User extends Authenticatable
         'first_name',
         'last_name',
         'email',
-        'password',
     ];
+
+    // function to set default password
+    public static function create(array $attributes = [])
+    {
+        if (!array_key_exists('password', $attributes)) {
+            $attributes['password'] = '';
+        }
+
+        return parent::create($attributes);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
