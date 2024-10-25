@@ -13,3 +13,5 @@ Route::prefix('v1')->group(function () {
     // Batch Update Route
     Route::post('users/batch-update', [BatchUpdateController::class, 'handleBatchUpdate']);
 });
+
+

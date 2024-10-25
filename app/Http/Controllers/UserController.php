@@ -7,21 +7,16 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index(Request $request)
     {
         $users = User::all();
 
-        // Check if the request is an API request
         if ($request->wantsJson()) {
             return response()->json($users);
         }
 
-            // if not, return the web view
-            return view('users.index', compact('users'));
-        }
+        return view('users.index', compact('users'));
+    }
 
     public function store(Request $request)
     {
@@ -32,12 +27,19 @@ class UserController extends Controller
             'timezone' => 'required',
         ]);
 
-        User::create([
+        $user = User::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
             'timezone' => $request->timezone,
         ]);
+
+        if ($request->expectsJson()) {
+            return response()->json([
+                'message' => 'User created successfully.',
+                'user' => $user,
+            ], 201);
+        }
 
         return redirect()->route('users.index')->with('success', 'User created successfully.');
     }
@@ -57,6 +59,14 @@ class UserController extends Controller
         ]);
 
         $user->update($request->all());
+
+        if ($request->expectsJson()) {
+            return response()->json([
+                'message' => 'User updated successfully.',
+                'user' => $user,
+            ], 200);
+        }
+
         return redirect()->route('users.index')->with('success', 'User updated successfully.');
     }
 
