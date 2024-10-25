@@ -37,7 +37,7 @@ class SendBatchUpdates extends Command
             ]
         ];
 
-        $response = Http::post('https://api.thirdparty.com/update', $batchPayload);
+        $response = Http::post('http://localhost:8000/api/v1/update', $batchPayload);
 
         if ($response->successful()) {
             $this->info('Batch update sent successfully!');

@@ -1,12 +1,15 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BatchUpdateController;
 use App\Http\Controllers\UserController;
 
-// Route for batch update
-Route::post('/users/batch-update', [BatchUpdateController::class, 'handleBatchUpdate']);
+// API Routes
+Route::prefix('v1')->group(function () {
+    // User Routes
+    Route::apiResource('users', UserController::class);
 
-// API resource route for users
-Route::get('users', [UserController::class, 'index']);
-Route::post('users', [UserController::class, 'store']);
+    // Batch Update Route
+    Route::post('users/batch-update', [BatchUpdateController::class, 'handleBatchUpdate']);
+});

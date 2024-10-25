@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class BatchUpdateService
 {
-    protected $apiEndpoint = 'http://localhost:8000/api/users/batch-update';
+    protected $apiEndpoint = 'http://localhost:8000/api/v1/users/batch-update';
 
     public function updateUsersInBatches()
     {
