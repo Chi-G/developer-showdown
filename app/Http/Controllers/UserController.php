@@ -12,7 +12,6 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        // dd($request->all());
         $users = User::all();
 
         // Check if the request is an API request
@@ -23,11 +22,6 @@ class UserController extends Controller
             // if not, return the web view
             return view('users.index', compact('users'));
         }
-
-    public function create()
-    {
-        return view('users.create');
-    }
 
     public function store(Request $request)
     {
